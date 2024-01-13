@@ -11,6 +11,8 @@ const postVideogame = async (req, res) => {
             released, 
             rating 
         } = req.body;
+
+        
         if(name && description && platforms && background_image && released && rating){
             const newGame = await Videogame.findOrCreate({
                 where: {

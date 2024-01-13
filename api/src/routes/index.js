@@ -16,8 +16,8 @@ router.get("/videogame/:id", getVideogameById) // ok
 router.get("/videogame", getVideogameByName) // ok
 router.get("/genres", getGenres) // ok
 router.get("/home", getVideogames) //ok
-router.get("/login", login)
-router.post("/login", postUser)
+router.get("/", login)
+router.post("/newuser", postUser)
 router.post("/videogame", postVideogame) //ok
 router.post("/videogame/fav", postFav);
 router.delete("/videogame/fav/:id", deleteFav)

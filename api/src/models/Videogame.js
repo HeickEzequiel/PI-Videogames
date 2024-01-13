@@ -6,6 +6,7 @@ module.exports = (Sequelize) => {
   Sequelize.define('videogame', {
     id: {
       type:DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true
     },
@@ -14,7 +15,7 @@ module.exports = (Sequelize) => {
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     platforms: {
@@ -30,7 +31,7 @@ module.exports = (Sequelize) => {
       allowNull: false
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
       allowNull: false,
       validate: {
         min: 1,

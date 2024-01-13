@@ -4,6 +4,7 @@ module.exports = (Sequelize) => {
     Sequelize.define('genero',{
         id: {
             type: DataTypes.INTEGER,
+            autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
