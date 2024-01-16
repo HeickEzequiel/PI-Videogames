@@ -12,13 +12,14 @@ const postVideogame = require('../controllers/postVideogame.js');
 
 
 
+
 router.get("/videogame/:id", getVideogameById) // ok
 router.get("/videogame", getVideogameByName) // ok
 router.get("/genres", getGenres) // ok
 router.get("/home", getVideogames) //ok
-router.get("/", login)
-router.post("/newuser", postUser)
-router.post("/videogame", postVideogame) //ok
+router.post("/", login)//ok
+router.post("/newuser", postUser)//ok
+router.post("/newgame", postVideogame) //ok
 router.post("/videogame/fav", postFav);
 router.delete("/videogame/fav/:id", deleteFav)
 

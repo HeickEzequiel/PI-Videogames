@@ -2,8 +2,8 @@ const { User } = require("../db.js");
 
 const login = async (req, res) => {
     try{
-    const {email, password, name, fullname} = req.body;
-    if( email && password && name && fullname){
+    const {email, password} = req.body;
+    if( email && password ){
         const actualUser = await User.findOne({
             where: { email: email }
         })

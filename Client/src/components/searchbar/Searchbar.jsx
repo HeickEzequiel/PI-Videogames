@@ -3,38 +3,28 @@ import { useState } from "react";
 
 function SearchBar(props) {
 
-   const [ id, setId] = useState ("")
+   const [ name, setName] = useState ("")
+   
    const handleChange = event => {
       const {value} = event.target 
-      setId(value)
+      setName(value)
    }
    
    const handleClick = event => {
       event.preventDefault()
-      props.onSearch(id)
-      setId("")
+      props.onSearch(name)
+      setName("")
    }
 
-   const handleRandom = () => {
-      const randomNum = Math.floor(Math.random()*826)+1
-      props.onSearch(randomNum)
-   }
-
-   return (
+ return (
       <div >
          <input 
-         type='text'
-         name= "search"
-         id= "search"
-         onChange = {handleChange}
-         value={id} />
-         
-         
+            type='text'
+            name= "search"
+            id= "search"
+            onChange = {handleChange}
+            value={name} />
          <button onClick={handleClick} >Agregar</button>
-         <button onClick={handleRandom}>Personaje Random</button>
-         <br />
-         <hr />
-         <br />
       </div>
    );
 }

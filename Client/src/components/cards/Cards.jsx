@@ -1,22 +1,30 @@
+import { useEffect } from "react";
 import Card from "../card/Card";
+import styles from "./Cards.module.css"
 
-function Cards({videogames}){
-    return (
-        <div>
-            {
-            
-                <Card
-                    name = {videogames.name}
-                />
+function Cards({ vgames, videogames }) {
+  
+  
 
-            
-
-                
-            }
-        
-
-
-        </div>
-    )
+  useEffect(()=>{videogames()},[])
+ 
+  console.log(vgames)
+  
+    return <div className={styles.container} >
+      {
+        !vgames.length ? <h2>No existen videojuegos</h2>
+        :
+        vgames.map((game, key) => (
+        <Card
+          key={key}
+          id={game.id}
+          name={game.name}
+          image={game.background_image}
+        />
+      ))
+    }
+    </div>
+  
 }
-export default Cards
+
+export default Cards;

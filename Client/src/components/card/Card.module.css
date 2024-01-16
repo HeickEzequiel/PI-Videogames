@@ -1,0 +1,16 @@
+.container{
+    background-color: grey;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 50px;
+    font-family: cursive;
+    font-size: 10px;
+    width: 300px;
+    height: 400px;
+    
+}
+.container img{
+    border-radius: 50px;
+    width: 300px;
+    height: 300px;
+}

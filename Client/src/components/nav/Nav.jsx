@@ -1,14 +1,17 @@
-import SearchBar from "../searchbar/Searchbar.jsx";
+import Newgame from "../newGame/Newgame.jsx";
+import Searchbar from "../searchbar/Searchbar.jsx"
 import { Link } from "react-router-dom";
 
 
  function Nav(props) {
     return (
        <div>
-         <SearchBar onSearch = {props.onSearch}/>
-       
-       
-
+            <Searchbar onSearch = {props.onSearch}/>
+          <button>
+            <Link to= '/newgame'>
+               Añadir juego
+            </Link>
+          </button>
          <button >
             <Link to= '/home'>
             Home

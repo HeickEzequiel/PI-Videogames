@@ -1,12 +1,17 @@
 :root {
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color-scheme: light dark;
     color: black;
-    background-color: #213547;
-    background-image: url(https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-scaled.jpg);
-    background-size: cover;
+    background-color: black;
+    background-image:  url(https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-scaled.jpg);
+   
+
     
   }
+  

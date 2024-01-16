@@ -7,7 +7,7 @@ const postUser = async (req, res) => {
         const newUser = await User.findOrCreate({
             where: { email, password, name, lastName }
         })
-        res.json(newUser)
+        return res.json(newUser)
     }
     return res.status(400).send("Datos incorrectos")
     }catch (error){

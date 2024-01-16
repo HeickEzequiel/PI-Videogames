@@ -3,7 +3,8 @@ import validation from "../../utils/validation";
 import { useNavigate } from "react-router-dom";
 
 function Form(props){
-   const navigate = useNavigate ();
+    
+    const navigate = useNavigate ();
     
 const [userData, setUserData] = useState ({
     email:"",
@@ -35,16 +36,17 @@ const handleSubmit = event => {
 const handleNewUser = () => {
     navigate("/newuser");
   };
-const handleLogin = () => {
-    navigate("/home");
-};
+// const handleLogin = event => {
+//     event.preventDefault()
+//     navigate("/home");
+// };
 
 
     return(
         <div>
             <form onSubmit={handleSubmit} >
 
-                <label style={{color: "white"}}>Email: </label>
+                <label style={{color: "black"}}>Email: </label>
                 <input type='text'
                        key="email"
                        name= "email"
@@ -56,7 +58,7 @@ const handleLogin = () => {
                 <br />
 
                 
-                <label style={{color: "white"}}>Password: </label>
+                <label style={{color: "black"}}>Password: </label>
                 <input type='password'
                        key="password"
                        name= "password"
@@ -70,7 +72,7 @@ const handleLogin = () => {
                 <button
                         type="submit"
                         disabled={ errors.email || errors.password }
-                        onClick={handleLogin}
+                        // onClick={handleLogin}
                     >
                     Submit </button>
                 <button
