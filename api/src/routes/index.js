@@ -20,8 +20,8 @@ router.get("/home", getVideogames) //ok
 router.post("/", login)//ok
 router.post("/newuser", postUser)//ok
 router.post("/newgame", postVideogame) //ok
-router.post("/videogame/fav", postFav);
-router.delete("/videogame/fav/:id", deleteFav)
+router.post("/favorites", postFav);
+router.delete("/favorites/:id", deleteFav)
 
 
 module.exports = router;

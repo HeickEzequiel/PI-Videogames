@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Card from "../card/Card";
 import styles from "./Cards.module.css"
 
-function Cards({ vgames, videogames }) {
+function Cards({ vgames, videogames, onClose }) {
   
   
 
@@ -20,6 +20,7 @@ function Cards({ vgames, videogames }) {
           id={game.id}
           name={game.name}
           image={game.background_image}
+          onClose = { onClose }
         />
       ))
     }

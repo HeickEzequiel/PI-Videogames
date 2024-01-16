@@ -2,15 +2,16 @@
     background-color: grey;
     margin: 5px;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 8px;
     font-family: cursive;
     font-size: 10px;
-    width: 1200px;
-    height: 900px;
+    width: 900px;
+    height:fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
 }
 .container img{
     border-radius: 50px;
     width: 300px;
-    height: 200px;
+    height: fit-content;
 }
