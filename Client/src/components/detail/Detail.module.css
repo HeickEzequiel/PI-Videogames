@@ -1,17 +1,22 @@
 .container{
-    background-color: grey;
+    background-color: transparent;
+    color: aliceblue;
     margin: 5px;
     padding: 10px;
     border-radius: 8px;
-    font-family: cursive;
-    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
     width: 900px;
     height:fit-content;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
+
 }
 .container img{
     border-radius: 50px;
     width: 300px;
     height: fit-content;
+    object-fit: cover;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+

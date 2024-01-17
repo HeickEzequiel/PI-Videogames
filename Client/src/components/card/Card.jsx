@@ -34,17 +34,18 @@ function Card(props) {
         <div className={styles.container}>
             {
                 isFav 
-                ? (<button onClick={handleFavorite}>❤️</button>) 
-                : (<button onClick={handleFavorite}>🤍</button>)
+                ? (<button className={styles.button} onClick={handleFavorite}>Quitar de favoritos❤️</button>) 
+                : (<button className={styles.button} onClick={handleFavorite}>Agregar a favoritos🤍</button>)
             }
             
             
             <Link to={`/videogame/${props.id}`}>
             <img className={styles.container.img}
-                 src={props.image} 
+                 src={props.background_image} 
                  alt={props.name}/>
-            <h1>{props.name}</h1>
             </Link>
+            <h1>{props.name}</h1>
+            <h2>Numero de ID:{props.id}</h2>
         </div>
             )
             

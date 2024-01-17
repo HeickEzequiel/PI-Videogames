@@ -2,14 +2,12 @@ const { Favorite } = require("../db");
 
 const postFav = async ( req, res ) => {
     try{
-        const { id, name, description, platforms, background_image, released, rating, genres } = req.body; 
-        if( id && name && description && platforms && background_image && released && rating && genres ){
+        const { id, name, background_image, released, rating, } = req.body; 
+        if( id && name && background_image && released && rating ){
             await Favorite.findOrCreate({
                 where: {
                     id,
                     name, 
-                    description, 
-                    platforms, 
                     background_image, 
                     released, 
                     rating 

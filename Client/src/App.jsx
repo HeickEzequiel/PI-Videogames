@@ -16,7 +16,6 @@ import { removeFav } from './redux/actions.js';
 function App() {
     
     const initialstate = []
-    const [vgames, setVgames] = useState(initialstate)
     const navigate = useNavigate();
     const location = useLocation();
     const dispatch = useDispatch
@@ -41,17 +40,18 @@ function App() {
     }
     function logout() {
         setAccess(false);
-        }
+    }
     useEffect(()=>{
         !access && navigate('/');},[access]);
         
         
-    /////-------LANDING PAGE--------///////    
-    async function videogames (){
-        try{
-            const {data} = await axios ('http://localhost:3001/home')
-            const vg = data.map(({id, name, platforms: platforms, background_image, released, rating}) => 
-            ({id, name, platforms: platforms, background_image, released, rating}))
+        /////-------LANDING PAGE--------///////    
+        const [vgames, setVgames] = useState(initialstate)
+        async function videogames (){
+            try{
+                const {data} = await axios ('http://localhost:3001/home')
+            const vg = data.map(({id, name, platforms, background_image, released, rating}) => 
+            ({id, name, platforms, background_image, released, rating}))
             
             if(vg.length>0){
                 setVgames([...vgames, ...vg])

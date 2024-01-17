@@ -11,14 +11,6 @@ module.exports = (Sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    platforms: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
-    },
     background_image: {
       type: DataTypes.STRING,
       allowNull: false
@@ -35,9 +27,6 @@ module.exports = (Sequelize) => {
         max: 10,
       }
     },
-    genres:{
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
-    },
+   
   }, { timestamps: false});    
 }

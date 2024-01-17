@@ -27,7 +27,7 @@ function reducer(state = initialState, { type, payload }) {
         myFavorites: state.allGames
       }
       const filteredFavs = state.allGames.filter(
-        game => game.genres === payload
+        game => game.platforms === payload
       )
       return {
         ...state,

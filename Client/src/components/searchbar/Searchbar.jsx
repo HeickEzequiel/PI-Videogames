@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import styles from "./searchbar.module.css"
 
 function SearchBar(props) {
 
@@ -17,14 +17,14 @@ function SearchBar(props) {
    }
 
  return (
-      <div >
-         <input 
+      <div className={styles.body}>
+         <input className={styles.bar}
             type='text'
             name= "search"
             id= "search"
             onChange = {handleChange}
             value={name} />
-         <button onClick={handleClick} >Agregar</button>
+         <button className={styles.button} onClick={handleClick} >Agregar</button>
       </div>
    );
 }

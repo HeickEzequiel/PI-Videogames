@@ -1,6 +1,7 @@
 import { useNavigate} from "react-router-dom"
 import { useState } from "react"
 import validation from "../../utils/validation"
+import styles from "./Newuser.module.css"
 
 
 function newUser (props){
@@ -54,7 +55,7 @@ function newUser (props){
   return(
     <div>
       <form onSubmit={handleSubmit} >
-        <label style={{color: "black"}}>Nombre: </label>
+        <label style={{color: "white"}}>Nombre: </label>
           <input type='text'
                key="name"
                name= "name"
@@ -64,7 +65,7 @@ function newUser (props){
           />
       <p style={{color: "red"}}>{ errors.name ? errors.name : null }</p>
     <br />
-        <label style={{color: "black"}}>Apellido: </label>
+        <label style={{color: "white"}}>Apellido: </label>
           <input type='text'
                key="lastName"
                name= "lastName"
@@ -94,7 +95,7 @@ function newUser (props){
           />
       <p style={{color: "red"}}>{ errors.password && errors.password }</p>
     <br />
-      <button type="submit" disabled={ errors.email || errors.password }>Crear usuario! </button>
+      <button className={styles.button} type="submit" disabled={ errors.email || errors.password }>Crear usuario! </button>
         
       </form>
     </div>

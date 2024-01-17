@@ -7,6 +7,7 @@ export const addFav = (game) => {
   
   return async (dispatch) => {
     try {
+      console.log(game)  
       const { data } = await axios.post(endpoint, game)
       return dispatch({
         type: ADD_FAV,
@@ -39,10 +40,10 @@ export const removeFav = (id) => {
 }
 
 
-export function filterCards(genres) {
+export function filterCards(platforms) {
   return {
     type: FILTER,
-    payload: genres
+    payload: platforms
   }
 }
 
