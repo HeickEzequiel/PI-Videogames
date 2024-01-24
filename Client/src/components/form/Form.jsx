@@ -67,7 +67,7 @@ function Form(props){
                     type="submit"
                     disabled={ errors.email || errors.password }
                     >
-                    Submit </button>
+                    Ingresar</button>
                 <button
                     className={styles.button}
                     type="button"

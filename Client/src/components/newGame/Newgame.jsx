@@ -1,18 +1,19 @@
 import { useState } from "react"
-import validation from "../../utils/validation"
 import { useNavigate } from "react-router-dom"
+import styles from "./Newgame.module.css"
 
 function Newgame (props) {
 
 const navigate = useNavigate()
 
     const [game, setGame] = useState({
-        name: "", 
-        description: "", 
-        platforms: "", 
-        background_image: "", 
-        released: "", 
-        rating: "" 
+      id:"",
+      name: "", 
+      description:"", 
+      platforms:"", 
+      background_image:"", 
+      released:"", 
+      rating: 0
     })
  
 
@@ -33,7 +34,7 @@ const navigate = useNavigate()
           });
           if (response.ok) {
             alert('Nuevo juego creado con éxito');
-            navigate("/")
+            navigate("/home")
     
           } else {
             alert('Error al guardar nuevo juego:', response.statusText);
@@ -46,8 +47,18 @@ const navigate = useNavigate()
 
     return(
         <div>
+          
           <form onSubmit={handleSubmit} >
-            <label style={{color: "black"}}>Nombre: </label>
+         
+            <label style={{color: "white"}}>id: </label>
+              <input type='number'
+                   key="id"
+                   name= "id"
+                   value={game.id}
+                   placeholder="Ingresar id"
+                   onChange={handleChange}
+              />
+             <label style={{color: "white"}}>Nombre: </label>
               <input type='text'
                    key="name"
                    name= "name"
@@ -57,7 +68,7 @@ const navigate = useNavigate()
               />
           
         <br />
-            <label style={{color: "black"}}>Descripción: </label>
+            <label style={{color: "white"}}>Descripción: </label>
               <input type='text'
                    key="description"
                    name= "description"
@@ -67,7 +78,7 @@ const navigate = useNavigate()
               />
           
         <br />
-            <label style={{color: "black"}}>Plataformas: </label>
+            <label style={{color: "white"}}>Plataformas: </label>
               <input type='text'
                    key="platforms"
                    name= "platforms"
@@ -77,7 +88,7 @@ const navigate = useNavigate()
               />
           
         <br />
-            <label style={{color: "black"}}>Imagen: </label>
+            <label style={{color: "white"}}>Imagen: </label>
               <input type='text'
                     key="background_image"
                     name= "background_image"
@@ -87,7 +98,7 @@ const navigate = useNavigate()
               />
           
         <br />
-        <label style={{color: "black"}}>Fecha de lanzamiento: </label>
+        <label style={{color: "white"}}>Fecha de lanzamiento: </label>
               <input type='date'
                     key="released"
                     name= "released"
@@ -97,8 +108,8 @@ const navigate = useNavigate()
               />
          
         <br />            
-        <label style={{color: "black"}}>Rating: </label>
-              <input type='text'
+        <label style={{color: "white"}}>Rating: </label>
+              <input type='string'
                     key="rating"
                     name= "rating"
                     value={game.rating}
@@ -107,7 +118,9 @@ const navigate = useNavigate()
               />
           
         <br />
-          <button type="submit" > Guardar Videojuego! </button>
+          <button 
+          className={styles.button}
+          type="submit" > Guardar Videojuego! </button>
             
           </form>
         </div>
