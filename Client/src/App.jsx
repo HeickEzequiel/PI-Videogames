@@ -14,7 +14,6 @@ import { useDispatch } from 'react-redux';
 import { removeFav } from './redux/actions.js';
 
 function App() {
-    
     const initialstate = []
     const navigate = useNavigate();
     const location = useLocation();
@@ -38,32 +37,31 @@ function App() {
             alert(error.message)
         }
     }
+    
     function logout() {
         setAccess(false);
     }
-    useEffect(()=>{
-        !access && navigate('/');},[access]);
+
+    useEffect(()=>{!access && navigate('/');},[access]);
         
         
-        /////-------LANDING PAGE--------///////    
-        const [vgames, setVgames] = useState(initialstate)
-        async function videogames (){
-            try{
-                const {data} = await axios ('http://localhost:3001/home')
+    /////-------LANDING PAGE--------///////    
+    const [vgames, setVgames] = useState(initialstate)
+    async function videogames (){
+        try{
+            const {data} = await axios ('http://localhost:3001/home')
             const vg = data.map(({id, name, platforms, background_image, released, rating}) => 
             ({id, name, platforms, background_image, released, rating}))
-            
             if(vg.length>0){
                 setVgames([...vgames, ...vg])
                 } else{
                     alert('no hay juegos')
-                    }
             }
-            catch (error) {
-                alert('error en el try-catch', error.message)
-            }
+        } catch (error) {
+            alert('error en el try-catch', error.message)
+        }
     }
-        
+    useEffect(()=>{videogames()},[])
     //////------SEARCH------//////
     const [games, setGames] = useState(initialstate)
     async function onSearch(name) {
@@ -85,14 +83,14 @@ function App() {
             } 
         catch (error) {
             alert(error.message)
-            }
+        }
     }
         
     /////------FUNCTION ONCLOSE-----//////
     const onClose = (id) => {
         setGames(games.filter((game) => game.id !== Number(id)))
         dispatch(removeFav(id))
-        }
+    }
         
 
 

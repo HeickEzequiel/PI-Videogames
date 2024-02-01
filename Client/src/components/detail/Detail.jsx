@@ -22,7 +22,6 @@ function Detail(props){
 return(
     <div className = {styles.container}>
         <h1> {game.name} </h1>
-
         <img  
             src = {game.background_image} 
             alt = {game.name}

@@ -3,7 +3,6 @@ const { Videogame } = require("../db.js");
 const postVideogame = async (req, res) => {
     try{
         const { 
-            id,
             name, 
             description, 
             platforms, 
@@ -12,11 +11,9 @@ const postVideogame = async (req, res) => {
             rating 
         } = req.body;
 
-        
-        if(id && name && description && platforms && background_image && released && rating){
+        if(name && description && platforms && background_image && released && rating){
             const newGame = await Videogame.findOrCreate({
                 where: {
-                    id,
                     name, 
                     description, 
                     platforms, 
@@ -24,10 +21,12 @@ const postVideogame = async (req, res) => {
                     released, 
                     rating 
                 }
-                })
+            })
             return res.status(200).json(newGame)
         }
+    
         return res.status(400).send("Datos incorrectos")
+    
     }catch (error){
         return res.status(500).send(error.message)
     }
