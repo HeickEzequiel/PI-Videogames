@@ -5,8 +5,13 @@ const { API_KEY } = process.env;
 
 const getVideogames = async (req, res) => {
     try {
-        const { data } = await axios.get(`${URL}?key=${API_KEY}`);
-        const videogames = data.results
+        let videogames = []
+        let page = 1
+        while(page < 6){
+        const { data } = await axios.get(`${URL}?key=${API_KEY}&page=${page}`);
+        videogames = [...videogames, ...data.results]
+        page++
+        }
         const games = videogames.map(
             ({id, name, platforms, background_image, released, rating}) => 
             ({id, name, platforms, background_image, released, rating})

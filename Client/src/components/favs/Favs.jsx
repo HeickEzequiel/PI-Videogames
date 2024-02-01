@@ -19,7 +19,7 @@ function Favs({ onClose }) {
 
    return (
       <div>
-         <div>
+         <div className={styles.filters}>
             <select name="order" onChange={handleOrder}>
                <option value="A">Ascendente</option>
                <option value="D">Descendente</option>

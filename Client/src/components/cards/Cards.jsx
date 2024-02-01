@@ -3,14 +3,14 @@ import Card from "../card/Card";
 import styles from "./Cards.module.css"
 import Pag from "../Pag/Pag.jsx"
 
-function Cards({ vgames }) {
+function Cards({ vgames, videogames }) {
     
-  const [cant, setCant] = useState(5)
+  const [cant, setCant] = useState(8)
   const [currentPage, setCurrentPage] = useState(1)
   
   const indexEnd = currentPage * cant;
   const indexIni = indexEnd - cant;
-  //useEffect(()=>{videogames()},[])
+  useEffect(()=>{videogames()},[])
   
   const vgames5 = vgames.slice(indexIni, indexEnd)
   const pages = Math.ceil(vgames.length / cant)

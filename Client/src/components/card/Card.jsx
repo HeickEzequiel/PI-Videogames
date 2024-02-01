@@ -34,8 +34,8 @@ function Card(props) {
         <div className={styles.container}>
             {
                 isFav 
-                ? (<button className={styles.button} onClick={handleFavorite}>Quitar de favoritos❤️</button>) 
-                : (<button className={styles.button} onClick={handleFavorite}>Agregar a favoritos🤍</button>)
+                ? (<button className={styles.button} onClick={handleFavorite}>❤️</button>) 
+                : (<button className={styles.button} onClick={handleFavorite}>🤍</button>)
             }
             
             
@@ -46,6 +46,7 @@ function Card(props) {
             </Link>
             <h1>{props.name}</h1>
             <h2>Numero de ID:{props.id}</h2>
+            
         </div>
             )
             

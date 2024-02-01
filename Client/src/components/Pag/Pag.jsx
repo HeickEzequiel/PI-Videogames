@@ -11,8 +11,8 @@ const Pag = ({ pages, currentPage, setCurrentPage}) =>{
     }
 
     return(
-        <div>
-            <div>
+        
+            <div className={styles.container}>
                 <button className={styles.button} onClick={prev}>Prev</button>
                 <h3 className={styles.text}>
                     {currentPage} / {pages}
@@ -20,7 +20,7 @@ const Pag = ({ pages, currentPage, setCurrentPage}) =>{
                 <button className={styles.button} onClick={next}>Next</button>
             </div>
             
-        </div>
+        
     )
 }
 export default Pag
