@@ -10,34 +10,32 @@ function Cards({ vgames, videogames }) {
   
   const indexEnd = currentPage * cant;
   const indexIni = indexEnd - cant;
-  useEffect(()=>{videogames()},[])
+  //useEffect(()=>{videogames()},[])
   
   const vgames5 = vgames.slice(indexIni, indexEnd)
   const pages = Math.ceil(vgames.length / cant)
-  console.log(vgames5)
-  
-    return <div className={styles.container} >
-      {
-        !vgames5.length ? <h2>No existen videojuegos</h2>
-        :
-        vgames5.map((game, key) => (
-        <Card
-          key={key}
-          id={game.id}
-          name={game.name}
-          background_image={game.background_image}
-          released={game.released}
-          rating={game.rating}       
+ console.log(vgames5)
+  return <div className={styles.container} >
+    {
+      !vgames5.length 
+        ? <h2>No existen videojuegos</h2>
+        : vgames5.map((game, key) => (
+          <Card
+            key={key}
+            id={game.id}
+            name={game.name}
+            background_image={game.background_image}
+            released={game.released}
+            rating={game.rating}       
           />
-          ))
-        }
-        <Pag 
-          setCurrentPage = {setCurrentPage}
-          currentPage = {currentPage}
-          pages = {pages} 
-          />
-    </div>
-  
+        ))
+    }
+    <Pag 
+      setCurrentPage = {setCurrentPage}
+      currentPage = {currentPage}
+      pages = {pages} 
+      />
+  </div>
 }
-
 export default Cards;
+  

@@ -1,52 +1,41 @@
-import { ADD_FAV, FILTER, ORDER, REMOVE_FAV,} from "./action-types";
-
 
 const initialState = {
   myFavorites: [],
   allGames: []
 }
 
-
-
 function reducer(state = initialState, { type, payload }) {
 
   switch(type) {
-
-
-    case ADD_FAV:
+    case "ADD_FAV":
       return { ...state, myFavorites: payload, allGames: payload };
-    
-    case REMOVE_FAV:
+    case "REMOVE_FAV":
       return { ...state, myFavorites: payload, allGames: payload };
-    
-    
-    case FILTER:{
-   
+    case "FILTER":{
       if(payload === "All") return {
         ...state,
         myFavorites: state.allGames
       }
       const filteredFavs = state.allGames.filter(
-        game => game.platforms === payload
+        game => game.rating === payload
       )
       return {
         ...state,
         myFavorites: filteredFavs
       }
-    }
-    case ORDER:
+    } 
+    case "ORDER":
       const orderCopy = [...state.myFavorites];
       if(payload === "A")
-        orderCopy.sort((a, b) => a.id - b.id);
+        orderCopy.sort((a, b) =>a.name.localeCompare(b.name));
       if(payload === "D")
-        orderCopy.sort((a, b) => b.id - a.id);
+        orderCopy.sort((a, b) => b.name.localeCompare(a.name));
       return {
         ...state,
         myFavorites: orderCopy
       }
-
-        default:
-          return { ...state }
+    default:
+    return { ...state }
   }
 }
 export default reducer

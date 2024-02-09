@@ -1,16 +1,14 @@
-import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from "./action-types";
 import axios from 'axios'
 
 
 export const addFav = (game) => {
   const endpoint = 'http://localhost:3001/favorites';
-  
+  console.log(game)
   return async (dispatch) => {
     try {
-      console.log(game)  
       const { data } = await axios.post(endpoint, game)
       return dispatch({
-        type: ADD_FAV,
+        type: "ADD_FAV",
         payload: data,
      });   
    
@@ -29,7 +27,7 @@ export const removeFav = (id) => {
     try {
       const { data } = await axios.delete(endpoint)
       return dispatch({
-        type: REMOVE_FAV,
+        type: "REMOVE_FAV",
         payload: data,
       });
 
@@ -40,16 +38,16 @@ export const removeFav = (id) => {
 }
 
 
-export function filterCards(platforms) {
+export function filterCards(rating) {
   return {
-    type: FILTER,
-    payload: platforms
+    type: "FILTER",
+    payload: rating
   }
 }
 
 export function orderCards(order) {
   return {
-    type: ORDER,
+    type: "ORDER",
     payload: order
   }
 }
